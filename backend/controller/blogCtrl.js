@@ -2,7 +2,8 @@ const Blog = require("../models/blogModel");
 const User = require("../models/userModel");
 const asyncHandler = require("express-async-handler");
 const validateMongoDbId = require("../utils/validateMongodbId");
-
+const cloudinaryUploadImg = require("../utils/cloudinary");
+const fs = require ("fs");
 const createBlog = asyncHandler(async (req, res) => {
     try {
       const newBlog = await Blog.create(req.body);
@@ -13,7 +14,7 @@ const createBlog = asyncHandler(async (req, res) => {
   });
 
 
-  const updateBlog = asyncHandler(async (req, res) => {
+const updateBlog = asyncHandler(async (req, res) => {
     const { id } = req.params;
     validateMongoDbId(id);
     try {
