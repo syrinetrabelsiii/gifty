@@ -26,10 +26,7 @@ var productSchema = new mongoose.Schema(
       type: String,
       enum:[],
     },
-    brand: {
-      type: String,
-      enum:[],
-    },
+
     quantity: {
       type: Number,
       required: true,
@@ -44,8 +41,6 @@ var productSchema = new mongoose.Schema(
         url: String,
       },
     ],
-    color: [],
-    tags: String,
     ratings: [
       {
         star: Number,
