@@ -1,1 +1,1 @@
-# gifty
+# gifty_store
